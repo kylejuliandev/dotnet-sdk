@@ -33,10 +33,10 @@ jobs:
           global-json-file: global.json
 
       - name: Restore
-        run: dotnet restore test\OpenFeature.IntegrationTests\
+        run: dotnet restore ./test/OpenFeature.IntegrationTests/
 
       - name: Build
-        run: dotnet build test\OpenFeature.IntegrationTests\ -c Release --no-restore
+        run: dotnet build ./test/OpenFeature.IntegrationTests/ -c Release --no-restore
 
       - name: Test
-        run: dotnet test test\OpenFeature.IntegrationTests\ -c Release --no-build --logger "console;verbosity=detailed"
+        run: dotnet test ./test/OpenFeature.IntegrationTests/ -c Release --no-build --logger "console;verbosity=detailed"
